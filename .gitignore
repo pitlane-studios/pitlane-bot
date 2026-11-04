@@ -147,3 +147,6 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Local decision log of the bmad-spec skill (contains internal discussion).
+docs/spec/.memlog.md
