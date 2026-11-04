@@ -150,3 +150,6 @@ vite.config.ts.timestamp-*
 
 # Local decision log of the bmad-spec skill (contains internal discussion).
 docs/spec/.memlog.md
+
+# Local SQLite database (DATABASE_PATH).
+data/

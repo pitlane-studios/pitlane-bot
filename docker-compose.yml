@@ -1,0 +1,15 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    # Forwards SIGTERM so `docker compose down` stops the bot at once.
+    init: true
+    env_file: .env
+    environment:
+      DATABASE_PATH: /app/data/pitlane-bot.sqlite
+      CONFIG_PATH: /app/config/production.json
+    volumes:
+      - data:/app/data
+
+volumes:
+  data:

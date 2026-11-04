@@ -15,7 +15,7 @@ The Discord bot for the Pitlane community server (Pitlane: <https://github.com/p
 Node.js (version in `.nvmrc`), TypeScript, discord.js v14, SQLite, Docker. Versions live in `package.json`.
 
 - TypeScript stays on 6.0: `typescript-eslint` 8.x requires `typescript <6.1`.
-- Every feature is a module under `src/modules/<name>/` with its own commands, event handlers and `enabled` flag (CAP-10). `src/index.ts` only wires modules.
+- Every feature is a module under `src/modules/<name>/` with its own commands, event handlers and `enabled` flag (CAP-10). The contract is `Module` in `src/modules/module.ts`; a new module is added to the `modules` list in `src/index.ts`, which only wires modules.
 - Secrets come from the environment (`.env.example`); everything else from the versioned config file, validated at startup.
 
 ## Commands
