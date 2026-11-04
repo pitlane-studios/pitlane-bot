@@ -1,0 +1,137 @@
+{
+  "guildId": "1567610036870578326",
+  "staffRole": {
+    "name": "Moderator",
+    "id": "1567630981446242495"
+  },
+  "statusRoles": {
+    "maintainer": {
+      "name": "Maintainer",
+      "id": "1567629757871292496"
+    },
+    "contributor": {
+      "name": "Contributor",
+      "id": "1567629814964293765"
+    },
+    "sponsor": {
+      "name": "Sponsor",
+      "id": "1567629842894037094"
+    }
+  },
+  "channels": {
+    "rules": {
+      "name": "rules",
+      "id": "1567628954234392756",
+      "category": "Info",
+      "visibility": "readOnly"
+    },
+    "announcements": {
+      "name": "announcements",
+      "id": "1567629592813109380",
+      "category": "Info",
+      "visibility": "readOnly"
+    },
+    "welcome": {
+      "name": "welcome",
+      "id": "1567628846667268096",
+      "category": "Info",
+      "visibility": "readOnly"
+    },
+    "roles": {
+      "name": "roles",
+      "id": "1567629007573352489",
+      "category": "Info",
+      "visibility": "readOnly"
+    },
+    "general": {
+      "name": "general",
+      "id": "1567629007573352489",
+      "category": "Community",
+      "visibility": "public"
+    },
+    "help": {
+      "name": "help",
+      "id": "1567629125886279761",
+      "category": "Community",
+      "visibility": "public"
+    },
+    "modLog": {
+      "name": "mod-log",
+      "id": "1567629265787289660",
+      "category": "Staff",
+      "visibility": "staff"
+    },
+    "staff": {
+      "name": "staff",
+      "id": "1567629315292667924",
+      "category": "Staff",
+      "visibility": "staff"
+    },
+    "communityUpdates": {
+      "name": "community-updates",
+      "id": "1567631144701136926",
+      "category": "Staff",
+      "visibility": "staff"
+    }
+  },
+  "roleCatalog": [
+    {
+      "group": "Pings",
+      "label": "Announcements",
+      "role": {
+        "name": "Announcements",
+        "id": "1567629957742600352"
+      }
+    },
+    {
+      "group": "Pings",
+      "label": "Releases",
+      "role": {
+        "name": "Releases",
+        "id": "1567629959453737053"
+      }
+    }
+  ],
+  "welcome": {
+    "text": "Welcome to the Pitlane community. Read the rules, pick your roles, and ask in #help if you are stuck.",
+    "links": [
+      {
+        "label": "Pitlane on GitHub",
+        "url": "https://github.com/pitlane-studios/pitlane"
+      }
+    ]
+  },
+  "thresholds": {
+    "joinBurst": {
+      "count": 15,
+      "windowSeconds": 30
+    },
+    "newAccountDays": 7,
+    "scamTimeoutMinutes": 1440
+  },
+  "retention": {
+    "sanctionsDays": 365,
+    "modLogDays": 90
+  },
+  "scamDomains": [],
+  "modules": {
+    "modlog": {
+      "enabled": true
+    },
+    "moderation": {
+      "enabled": true
+    },
+    "roles": {
+      "enabled": true
+    },
+    "welcome": {
+      "enabled": true
+    },
+    "antiraid": {
+      "enabled": true
+    },
+    "antiscam": {
+      "enabled": true
+    }
+  }
+}

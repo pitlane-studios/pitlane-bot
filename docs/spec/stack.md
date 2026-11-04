@@ -37,7 +37,7 @@ Each application (production, development) has Public Bot off and the two privil
 | Where | What |
 |---|---|
 | Environment | `DISCORD_TOKEN`, `DISCORD_CLIENT_ID`, `DATABASE_PATH`, `CONFIG_PATH` |
-| Versioned config file | guild id; staff role; channels; role catalog (group, label, emoji, role); welcome text and links; thresholds (join burst, new-account age, scam timeout); retention periods; scam domain list; `modules.<name>.enabled` |
+| Versioned config file | guild id; staff role; status roles; channels; role catalog (group, label, emoji, role); welcome text and links; thresholds (join burst, new-account age, scam timeout); retention periods; scam domain list; `modules.<name>.enabled` |
 
 One config file per environment under `config/` (production, development); `CONFIG_PATH` picks one. The config files are the source of truth for ids, layout and values: this document describes their shape, not their content.
 
@@ -49,6 +49,8 @@ Each role and channel entry holds a `name` and an `id`. Setup (CAP-11) matches b
 
 The bot reads the channels `modLog`, `roles` and `welcome`. The others exist for the server and for Community mode.
 
+Status roles (`maintainer`, `contributor`, `sponsor`) are assigned by staff by hand. They carry no permission, are displayed separately in the member list, and stay out of the role catalog. The bot never assigns them.
+
 The lockdown pause always lasts 24 hours (Discord's maximum); it is not configurable. A scam domain matches the link's host exactly or as a parent domain (`evil.com` matches `cdn.evil.com`), case-insensitive.
 
 ### Validation
@@ -59,10 +61,10 @@ The bot validates the config at startup. A missing id, an unknown role or channe
 
 `npm run setup` runs outside the bot, over the REST API, with `DISCORD_TOKEN` and `CONFIG_PATH`:
 
-- Creates each missing role (below the bot role) and each missing category and channel, with its visibility. Items that already exist by name are left untouched.
+- Creates each missing role (below the bot role) and each missing category and channel, with its visibility. Status roles are created displayed separately, with no permission. Channels are created as text channels; `announcements` is converted to an Announcement channel by hand once Community mode is on. Items that already exist by name are left untouched.
 - Writes the ids back into the config file, formatted for Prettier.
 - If the bot is not in the guild yet, prints the invite URL (permissions computed from the list above) and stops.
-- Prints what it created and the steps left by hand: remove Manage Channels, drag `Moderator` above the bot role, enable Community mode (`#rules`, `#community-updates`), turn on Membership Screening, post the privacy notice in `#rules`.
+- Prints what it created and the steps left by hand: remove Manage Channels, drag `Moderator` above the bot role, enable Community mode (`#rules`, `#community-updates`), convert `#announcements` to an Announcement channel, turn on Membership Screening, post the privacy notice in `#rules`.
 
 ## Data and privacy (CNIL / GDPR)
 

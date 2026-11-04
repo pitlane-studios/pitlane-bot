@@ -19,11 +19,24 @@ npm run test:coverage # Vitest, 100% coverage required
 npm run build         # compile to dist/
 ```
 
-Docker image:
+Run locally against the test guild (fill `.env` from `.env.example` first):
 
 ```sh
-docker build -t pitlane-bot .
+npm run build
+node --env-file=.env dist/index.js
 ```
+
+## Deployment
+
+On the server, with `.env` filled for the production application:
+
+```sh
+docker compose up -d --build
+```
+
+The config file (`config/production.json`) is baked into the image: a config
+change is a `git pull` and the same command. The SQLite database lives on the
+`data` volume.
 
 ## Community
 

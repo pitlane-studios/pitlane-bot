@@ -1,0 +1,137 @@
+{
+  "guildId": "1529861806493794477",
+  "staffRole": {
+    "name": "Moderator",
+    "id": ""
+  },
+  "statusRoles": {
+    "maintainer": {
+      "name": "Maintainer",
+      "id": ""
+    },
+    "contributor": {
+      "name": "Contributor",
+      "id": ""
+    },
+    "sponsor": {
+      "name": "Sponsor",
+      "id": ""
+    }
+  },
+  "channels": {
+    "rules": {
+      "name": "rules",
+      "id": "",
+      "category": "Info",
+      "visibility": "readOnly"
+    },
+    "announcements": {
+      "name": "announcements",
+      "id": "",
+      "category": "Info",
+      "visibility": "readOnly"
+    },
+    "welcome": {
+      "name": "welcome",
+      "id": "",
+      "category": "Info",
+      "visibility": "readOnly"
+    },
+    "roles": {
+      "name": "roles",
+      "id": "",
+      "category": "Info",
+      "visibility": "readOnly"
+    },
+    "general": {
+      "name": "general",
+      "id": "",
+      "category": "Community",
+      "visibility": "public"
+    },
+    "help": {
+      "name": "help",
+      "id": "",
+      "category": "Community",
+      "visibility": "public"
+    },
+    "modLog": {
+      "name": "mod-log",
+      "id": "",
+      "category": "Staff",
+      "visibility": "staff"
+    },
+    "staff": {
+      "name": "staff",
+      "id": "",
+      "category": "Staff",
+      "visibility": "staff"
+    },
+    "communityUpdates": {
+      "name": "community-updates",
+      "id": "",
+      "category": "Staff",
+      "visibility": "staff"
+    }
+  },
+  "roleCatalog": [
+    {
+      "group": "Pings",
+      "label": "Announcements",
+      "role": {
+        "name": "Announcements",
+        "id": ""
+      }
+    },
+    {
+      "group": "Pings",
+      "label": "Releases",
+      "role": {
+        "name": "Releases",
+        "id": ""
+      }
+    }
+  ],
+  "welcome": {
+    "text": "Welcome to the Pitlane community. Read the rules, pick your roles, and ask in #help if you are stuck.",
+    "links": [
+      {
+        "label": "Pitlane on GitHub",
+        "url": "https://github.com/pitlane-studios/pitlane"
+      }
+    ]
+  },
+  "thresholds": {
+    "joinBurst": {
+      "count": 15,
+      "windowSeconds": 30
+    },
+    "newAccountDays": 7,
+    "scamTimeoutMinutes": 1440
+  },
+  "retention": {
+    "sanctionsDays": 365,
+    "modLogDays": 90
+  },
+  "scamDomains": [],
+  "modules": {
+    "modlog": {
+      "enabled": true
+    },
+    "moderation": {
+      "enabled": true
+    },
+    "roles": {
+      "enabled": true
+    },
+    "welcome": {
+      "enabled": true
+    },
+    "antiraid": {
+      "enabled": true
+    },
+    "antiscam": {
+      "enabled": true
+    }
+  }
+}
